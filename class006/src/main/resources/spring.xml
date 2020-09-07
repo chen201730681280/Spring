@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                 http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean class="com.example.class005.demo.AnotherBean" id="anotherBean"></bean>
+    <bean class="com.example.class005.demo.Bean" id="bean"
+          c:anotherBean-ref="anotherBean" c:string="cccc"
+          p:anotherBean1-ref="anotherBean" p:string1="dddd"
+    >
+
+    </bean>
+
+
+</beans>
+        <!--<?xml version="1.0" encoding="UTF-8"?>-->
+        <!--<beans xmlns="http://www.springframework.org/schema/beans"-->
+        <!--       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+        <!--       xsi:schemaLocation="http://www.springframework.org/schema/beans-->
+        <!--                 http://www.springframework.org/schema/beans/spring-beans.xsd">-->
+        <!--<bean class="com.example.class005.demo.AnotherBean" id="anotherBean"></bean>-->
+        <!--<bean class="com.example.class005.demo.Bean" id="bean">-->
+        <!--&lt;!&ndash;    填充参数 ref对应AnotherBean的beanid&ndash;&gt;-->
+        <!--    <constructor-arg index="0" name="anotherBean"-->
+        <!--                     type="com.example.class005.demo.AnotherBean"-->
+        <!--                     ref="anotherBean"></constructor-arg>-->
+        <!--    <constructor-arg index="1" name="string" type="java.lang.String"-->
+        <!--                     value="aaaa"></constructor-arg>-->
+        <!--    <property name="anotherBean1" ref="anotherBean"/>-->
+        <!--    <property name="string1" value="bbbb"/>-->
+        <!--</bean>-->
+
+
+        <!--</beans>-->
