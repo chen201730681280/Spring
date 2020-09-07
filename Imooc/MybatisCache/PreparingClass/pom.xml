@@ -1,0 +1,28 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.imooc.mybatis.cache</groupId>
+    <artifactId>MybatisCache-PreparingClass</artifactId>
+    <version>1.0.0</version>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>Class01</module>
+        <module>Class02</module>
+        <module>Class03</module>
+        <module>Class04</module>
+        <module>Class05</module>
+        <module>Class06</module>
+        <module>Class07</module>
+        <module>Class08</module>
+    </modules>
+
+</project>

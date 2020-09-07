@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace为dao接口类的全名（包名+类名） -->
+<mapper namespace="com.imooc.mybatis.cache.dao.TempDao">
+    <!-- 如果要执行SELECT语句，就选择select标签。INSERT、UPDATE、DELETE同理 -->
+    <!-- id属性：对应dao接口类的方法名 -->
+    <!-- parameterType：对应dao接口类的参数类型，无参数可省略此属性 -->
+    <!-- resultType：对应dao接口类的返回结果类型，无返回结果可省略此属性 -->
+    <select id="getById" parameterType="int" resultType="com.imooc.mybatis.cache.entity.TempEntity">
+        SELECT * FROM temp WHERE id=#{id}
+    </select>
+</mapper>

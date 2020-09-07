@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="myScope" class="com.imooc.spring.ioc.class09.MyScope"/>
+    <bean id="simpleThreadScope" class="org.springframework.context.support.SimpleThreadScope"/>
+    <bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+        <property name="scopes">
+            <map>
+                <entry key="myScope" value-ref="myScope"/>
+                <entry key="simpleThreadScope" value-ref="simpleThreadScope"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="beanOfMyScope" class="com.imooc.spring.ioc.class09.Bean" scope="myScope"/>
+    <bean id="beanOfSimpleThreadScope" class="com.imooc.spring.ioc.class09.Bean" scope="simpleThreadScope"/>
+</beans>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="parentBean" class="com.imooc.spring.ioc.class12.ParentBean">
+        <property name="attribute1" value="attribute1"/>
+        <property name="attribute2" value="attribute2"/>
+        <property name="attribute3" value="attribute3"/>
+    </bean>
+    <bean id="bean1" class="com.imooc.spring.ioc.class12.Bean1" parent="parentBean">
+        <property name="attribute4" value="attribute4"/>
+        <property name="attribute5" value="attribute5"/>
+    </bean>
+    <bean id="bean2" class="com.imooc.spring.ioc.class12.Bean2" parent="parentBean">
+        <property name="attribute7" value="attribute7"/>
+        <property name="attribute8" value="attribute8"/>
+    </bean>
+
+    <bean id="abstractClass" class="com.imooc.spring.ioc.class12.ParentBean" abstract="true">
+        <property name="attribute1" value="attribute1"/>
+        <property name="attribute2" value="attribute2"/>
+        <property name="attribute3" value="attribute3"/>
+    </bean>
+    <bean id="bean1WithoutParent" class="com.imooc.spring.ioc.class12.Bean1WithoutParent" parent="abstractClass">
+        <property name="attribute4" value="attribute4"/>
+        <property name="attribute5" value="attribute5"/>
+    </bean>
+    <bean id="bean2WithoutParent" class="com.imooc.spring.ioc.class12.Bean2WithoutParent" parent="abstractClass">
+        <property name="attribute7" value="attribute7"/>
+        <property name="attribute8" value="attribute8"/>
+    </bean>
+
+
+</beans>

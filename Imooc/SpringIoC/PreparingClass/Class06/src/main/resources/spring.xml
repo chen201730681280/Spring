@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                 http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="anotherBean" class="com.imooc.spring.ioc.class06.AnotherBean"/>
+
+    <bean id="diByConstructor1" class="com.imooc.spring.ioc.class06.DIByConstructor">
+        <constructor-arg index="0" name="anotherBean"
+                         type="com.imooc.spring.ioc.class06.AnotherBean"
+                         ref="anotherBean"/>
+        <constructor-arg index="1" name="stringValue"
+                         type="java.lang.String"
+                         value="aaaa"/>
+        <constructor-arg index="2" name="integerValue"
+                         type="java.lang.Integer"
+                         value="1111"/>
+    </bean>
+
+    <bean id="diByConstructor2" class="com.imooc.spring.ioc.class06.DIByConstructor"
+          c:anotherBean-ref="anotherBean"
+          c:stringValue="aaaa"
+          c:integerValue="1111"/>
+
+    <bean id="diBySetter1" class="com.imooc.spring.ioc.class06.DIBySetter">
+        <property name="anotherBean" ref="anotherBean"/>
+        <property name="stringValue" value="aaaa"/>
+        <property name="integerValue" value="1111"/>
+    </bean>
+
+    <bean id="diBySetter2" class="com.imooc.spring.ioc.class06.DIBySetter"
+          p:anotherBean-ref="anotherBean"
+          p:stringValue="aaaa"
+          p:integerValue="1111"/>
+
+    <bean id="anotherBean1" class="com.imooc.spring.ioc.class06.AnotherBean"/>
+    <bean id="anotherBean2" class="com.imooc.spring.ioc.class06.AnotherBean"/>
+    <bean id="anotherBean3" class="com.imooc.spring.ioc.class06.AnotherBean"/>
+    <bean id="anotherBean4" class="com.imooc.spring.ioc.class06.AnotherBean"/>
+    <bean id="anotherBean5" class="com.imooc.spring.ioc.class06.AnotherBean"/>
+    <bean id="anotherBean6" class="com.imooc.spring.ioc.class06.AnotherBean"/>
+    <bean id="anotherBean7" class="com.imooc.spring.ioc.class06.AnotherBean"/>
+    <bean id="anotherBean8" class="com.imooc.spring.ioc.class06.AnotherBean"/>
+    <bean id="diByCollection" class="com.imooc.spring.ioc.class06.DIByCollection">
+        <property name="stringList">
+            <list>
+                <value>aaaaa</value>
+                <value>bbbbb</value>
+            </list>
+        </property>
+        <property name="anotherBeanList">
+            <list>
+                <ref bean="anotherBean1"/>
+                <ref bean="anotherBean2"/>
+            </list>
+        </property>
+        <property name="stringSet">
+            <list>
+                <value>ccccc</value>
+                <value>ddddd</value>
+            </list>
+        </property>
+        <property name="anotherBeanSet">
+            <list>
+                <ref bean="anotherBean3"/>
+                <ref bean="anotherBean4"/>
+            </list>
+        </property>
+        <property name="stringMap">
+            <map>
+                <entry key="eeeee" value="fffff"/>
+                <entry key="ggggg" value="hhhhh"/>
+            </map>
+        </property>
+        <property name="anotherBeanMap">
+            <map>
+                <entry key-ref="anotherBean5" value-ref="anotherBean6"/>
+                <entry key-ref="anotherBean7" value-ref="anotherBean8"/>
+            </map>
+        </property>
+        <property name="properties">
+            <map>
+                <entry key="hhhhh" value="iiiii"/>
+                <entry key="jjjjj" value="kkkkk"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="diByNull" class="com.imooc.spring.ioc.class06.DIByNull">
+        <property name="anotherBean"><null/></property>
+    </bean>
+
+    <bean id="diByInnerClass" class="com.imooc.spring.ioc.class06.DIByInnerClass">
+        <property name="anotherBean">
+            <bean class="com.imooc.spring.ioc.class06.AnotherBean"/>
+        </property>
+    </bean>
+</beans>

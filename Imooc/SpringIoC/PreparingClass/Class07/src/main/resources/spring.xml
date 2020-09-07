@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                 http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bean2Singleton" class="com.imooc.spring.ioc.class07.Bean2" scope="singleton"/>
+    <bean id="bean2Prototype" class="com.imooc.spring.ioc.class07.Bean2" scope="prototype"/>
+
+    <bean id="bean1SingletonBean2Singleton" class="com.imooc.spring.ioc.class07.Bean1" scope="singleton">
+        <property name="bean2" ref="bean2Singleton"/>
+    </bean>
+    <bean id="bean1SingletonBean2Prototype" class="com.imooc.spring.ioc.class07.Bean1" scope="singleton">
+        <property name="bean2" ref="bean2Singleton"/>
+    </bean>
+    <bean id="bean1PrototypeBean2Singleton" class="com.imooc.spring.ioc.class07.Bean1" scope="prototype">
+        <property name="bean2" ref="bean2Prototype"/>
+    </bean>
+    <bean id="bean1PrototypeBean2Prototype" class="com.imooc.spring.ioc.class07.Bean1" scope="prototype">
+        <property name="bean2" ref="bean2Prototype"/>
+    </bean>
+
+    <bean id="bean3" class="com.imooc.spring.ioc.class07.Bean3" scope="singleton">
+        <lookup-method name="getBean2" bean="bean2Prototype"/>
+    </bean>
+
+</beans>

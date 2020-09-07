@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                 http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bean" class="com.imooc.spring.ioc.class06.Bean"/>
+
+    <bean id="beanFromFactory1" class="com.imooc.spring.ioc.class06.BeanFactory" factory-method="createBean1"/>
+    <bean id="beanFactory" class="com.imooc.spring.ioc.class06.BeanFactory"/>
+    <bean id="beanFromFactory2" factory-bean="beanFactory" factory-method="createBean2"/>
+
+    <bean id="bean1" name="bean2, bean3" class="com.imooc.spring.ioc.class06.Bean"/>
+    <alias name="bean1" alias="bean4"/>
+
+</beans>
